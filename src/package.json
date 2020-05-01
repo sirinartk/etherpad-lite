@@ -62,7 +62,8 @@
     "ueberdb2": "0.4.0",
     "uglify-js": "2.6.2",
     "underscore": "1.8.3",
-    "unorm": "1.4.1"
+    "unorm": "1.4.1",
+    "snyk": "^1.316.1"
   },
   "bin": {
     "etherpad-lite": "./node/server.js"
@@ -82,8 +83,11 @@
     "url": "https://github.com/ether/etherpad-lite.git"
   },
   "scripts": {
-    "test": "nyc mocha --timeout 5000 ../tests/backend/specs/api"
+    "test": "nyc mocha --timeout 5000 ../tests/backend/specs/api",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "version": "1.7.5",
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "snyk": true
 }
